@@ -32,11 +32,6 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-  .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
   .state('map', {
     url: '/map',
     templateUrl: 'templates/map.html',
@@ -55,5 +50,56 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
+
+  .state('tab.listing', {
+    url: '/listing',
+    views: {
+      'tab-listing': {
+        templateUrl: 'templates/tab-listing.html',
+        controller: 'ListingCtrl'
+      }
+    }
+  })
+
+  .state('tab.more', {
+    url: '/more',
+    views: {
+      'tab-more': {
+        templateUrl: 'templates/tab-more.html',
+        controller: 'MoreCtrl'
+      }
+    }
+  })
+
+  .state('tab.orders', {
+    url: '/orders',
+    views: {
+      'tab-orders': {
+        templateUrl: 'templates/tab-orders.html',
+        controller: 'OrdersCtrl'
+      }
+    }
+  })
+
+  .state('tab.chat', {
+    url: '/chat',
+    views: {
+      'tab-chat': {
+        templateUrl: 'templates/tab-chat.html',
+        controller: 'ChatCtrl'
+      }
+    }
+  })
+
+  .state('tab.profile', {
+    url: '/profile',
+    views: {
+      'tab-profile': {
+        templateUrl: 'templates/tab-profile.html',
+        controller: 'ProfileCtrl'
+      }
+    }
+  })
+
 
 });

@@ -24,3 +24,9 @@ angular.module('starter.controllers', [])
       ctrl.dishes[dishID].orderQuantity > 0 ? ctrl.dishes[dishID].orderQuantity -= 1 : ctrl.dishes[dishID].orderQuantity = 0;
     };
   })
+
+  .controller('ListingCtrl', function(){})
+  .controller('MoreCtrl', function(){})
+  .controller('OrdersCtrl', function(){})
+  .controller('ChatCtrl', function(){})
+  .controller('ProfileCtrl', function(){});
