@@ -1,6 +1,11 @@
 
 <ion-view view-title="Cook Profile">
-  <ion-content class="padding">
+  <ion-nav-buttons side="secondary">
+    <span ng-if="Ctrl.isOrderNonNull()">Total: {{Ctrl.orderTotal()}}</span>
+    <button class="button" ng-if="Ctrl.isOrderNonNull()">
+      Confirm your order!
+    </button>
+  </ion-nav-buttons>  <ion-content class="padding">
     <div class="cook-info">
       <img class="cook-profile-main" src="{{Ctrl.data.profileImg}}" /></a>
       <div><b>{{Ctrl.data.name}} - {{Ctrl.data.rating}}:</b> {{Ctrl.data.speciality}}</div>
@@ -14,7 +19,7 @@
         <button ng-click="Ctrl.addPortion(id)">{{dish.price}} £ x {{Ctrl.currentOrder[id].quantity || ''}}</button>
         <button ng-if="Ctrl.currentOrder[id].quantity" ng-click="Ctrl.removePortion(id)">Remove Portion</button>
         <button ng-if="Ctrl.currentOrder[id].quantity">Delivery and extra options</button>
-        <span ng-if="Ctrl.currentOrder[id].quantity">Total: {{Ctrl.currentOrder[id].quantity * dish.price}} £</span>
+        <span ng-if="Ctrl.currentOrder[id].quantity">SubTotal: {{Ctrl.currentOrder[id].quantity * dish.price}} £</span>
       </div>
     </div>
   </ion-content>

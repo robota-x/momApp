@@ -42,8 +42,22 @@ angular.module('starter.controllers', [])
 
     Ctrl.removePortion = function removePortion(dishID) {
       console.log('rmv')
-
       Ctrl.currentOrder[dishID].quantity = 0 ? null : Ctrl.currentOrder[dishID].quantity -= 1;
+    }
+
+    Ctrl.isOrderNonNull = function() {
+      for (var dish in Ctrl.currentOrder) {
+        if (Ctrl.currentOrder[dish].quantity) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    Ctrl.orderTotal = function() {
+      return Object.keys(Ctrl.currentOrder).reduce(function(acc, key) {
+        return Ctrl.currentOrder[key].quantity * Ctrl.currentOrder[key].price + acc;
+      }, 0);
     }
 
   })
