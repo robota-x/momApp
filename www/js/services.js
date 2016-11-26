@@ -3,6 +3,15 @@
 angular.module('starter.controllers')
 
   .service('cookService', function() {
+
+    this.newOrder = function(cookID) {
+      var blankOrder =  angular.copy(this.data[cookID].offering);
+      for (var dish in blankOrder) {
+        blankOrder[dish].quantity = 0;
+      }
+      return blankOrder;
+    };
+
     this.data = {
       '0': {
         offering: {

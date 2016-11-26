@@ -29,8 +29,16 @@ angular.module('starter.controllers', [])
     this.data = angular.copy(cookService.data);
   })
 
-  .controller('CookProfileCtrl', function() {
-    console.log('in stuff');
+  .controller('CookProfileCtrl', function($stateParams, cookService) {
+    var Ctrl = this;
+    Ctrl.data = angular.copy(cookService.data[$stateParams.cookID]);
+
+    Ctrl.currentOrder = cookService.newOrder($stateParams.cookID);
+    console.log(Ctrl.currentOrder);
+    Ctrl.addPortion = function addPortion(dishID) {
+
+    };
+
   })
 
   .controller('MoreCtrl', function(){})
