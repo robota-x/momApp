@@ -13,5 +13,14 @@ angular.module('starter.controllers', [])
   })
 
   .controller('cookProfileController', function(cookService) {
-      this.dishes = cookService.dishes.firstCook;
+    var ctrl = this;
+    ctrl.dishes = angular.copy(cookService.dishes.firstCook);
+
+    ctrl.addPortion = function addPortion(dishID) {
+      ctrl.dishes[dishID].orderQuantity ? ctrl.dishes[dishID].orderQuantity +=1 : ctrl.dishes[dishID].orderQuantity = 1;
+    };
+
+    ctrl.removePortion = function removePortion(dishID) {
+      ctrl.dishes[dishID].orderQuantity > 0 ? ctrl.dishes[dishID].orderQuantity -= 1 : ctrl.dishes[dishID].orderQuantity = 0;
+    };
   });

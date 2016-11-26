@@ -1,5 +1,5 @@
 
-<ion-view view-title="Map">
+<ion-view view-title="Cook Profile">
   <ion-content class="padding">
     <img src="https://marvelapp-live.storage.googleapis.com/canvas/2016/11/8bc1d9e5890842e9aff3569c6a67fe51.jpg">
     <h1 class="cook-name">Mom</h1>
@@ -9,9 +9,9 @@
       <div class="cook-dish" ng-repeat="(id, dish) in ctrl.dishes">
         <img class="cook-dish-image" src="{{dish.imageSrc}}" />
         <h3>{{dish.name}}</h3>
-        <button>{{dish.price}} £ x {{dish.orderQuantity || ''}}</button>
-        <button ng-if=dish.orderQuantity>Remove Portion</button>
-        <button ng-if=dish.orderQuantity>Delivery and extra options</button>
+        <button ng-click="ctrl.addPortion(id)">{{dish.price}} £ x {{dish.orderQuantity || ''}}</button>
+        <button ng-if="dish.orderQuantity" ng-click="ctrl.removePortion(id)">Remove Portion</button>
+        <button ng-if="dish.orderQuantity">Delivery and extra options</button>
         <span ng-if=dish.orderQuantity>Total: {{dish.orderQuantity * dish.price}} £</span>
       </div>
     </div>
