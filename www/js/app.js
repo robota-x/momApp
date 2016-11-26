@@ -43,5 +43,11 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     controller: 'mapController'
   })
 
+  .state('cookProfile', {
+    url: '/cook-profile',
+    templateUrl: 'templates/cook-profile.html',
+    controller: 'cookProfileController'
+  })
+
 
 });

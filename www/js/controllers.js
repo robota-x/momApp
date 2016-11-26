@@ -10,4 +10,8 @@ angular.module('starter.controllers', [])
         zoom: 8
       });
     }
+  })
+
+  .controller('cookProfileController', function() {
+
   });
