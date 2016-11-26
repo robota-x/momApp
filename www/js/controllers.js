@@ -30,6 +30,10 @@ angular.module('starter.controllers', [])
 
   })
 
+  .controller('CookProfileCtrl', function($stateParams) {
+    console.log('in stuff', $stateParams.cookId);
+  })
+
   .controller('MoreCtrl', function(){})
   .controller('OrdersCtrl', function(){})
   .controller('ChatCtrl', function(){})

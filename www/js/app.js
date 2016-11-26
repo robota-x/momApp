@@ -101,5 +101,15 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     }
   })
 
+  .state('tab.cookprofile', {
+    url: '/cookprofile/:cookId',
+    views: {
+      'tab-cookprofile': {
+        templateUrl: 'templates/tab-cookprofile.html',
+        controller: 'CookProfileCtrl as Ctrl'
+      }
+    }
+  })
+
 
 });
