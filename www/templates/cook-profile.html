@@ -7,6 +7,7 @@
     <div class="cook-pitch">Here's what I'm cooking tonight<div>
     <div class="cook-dish-container">
       <div class="cook-dish" ng-repeat="(id, dish) in ctrl.dishes">
+        <h4>{{dish.date}}</h4>
         <img class="cook-dish-image" src="{{dish.imageSrc}}" />
         <h3>{{dish.name}}</h3>
         <button ng-click="ctrl.addPortion(id)">{{dish.price}} £ x {{dish.orderQuantity || ''}}</button>
