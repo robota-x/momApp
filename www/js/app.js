@@ -49,5 +49,11 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     controller: 'cookProfileController as ctrl'
   })
 
+  //tabs
+  .state('tab', {
+    url: '/tab',
+    abstract: true,
+    templateUrl: 'templates/tabs.html'
+  })
 
 });

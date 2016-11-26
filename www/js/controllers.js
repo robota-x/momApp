@@ -23,4 +23,4 @@ angular.module('starter.controllers', [])
     ctrl.removePortion = function removePortion(dishID) {
       ctrl.dishes[dishID].orderQuantity > 0 ? ctrl.dishes[dishID].orderQuantity -= 1 : ctrl.dishes[dishID].orderQuantity = 0;
     };
-  });
+  })
