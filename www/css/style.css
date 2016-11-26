@@ -33,33 +33,33 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
-  background-image: url('../img/listing.png');
+  background-image: url('../img/listing.jpeg');
 }
 
 .orders {
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
-  background-image: url('../img/order.png');
+  background-image: url('../img/order.jpeg');
 }
 
 .chat {
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
-  background-image: url('../img/chat.png');
+  background-image: url('../img/chat.jpeg');
 }
 
 .more {
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
-  background-image: url('../img/more.png');
+  background-image: url('../img/more.jpeg');
 }
 
 .profile {
   background-repeat: no-repeat;
   background-size: contain;
   background-position-x: center;
-  background-image: url('../img/profile.png');
+  background-image: url('../img/profile.jpeg');
 }
