@@ -31,17 +31,10 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
   .state('map', {
     url: '/map',
     templateUrl: 'templates/map.html',
     controller: 'mapController'
-  })
-
-  .state('cookProfile', {
-    url: '/cook-profile',
-    templateUrl: 'templates/cook-profile.html',
-    controller: 'cookProfileController as ctrl'
   })
 
   //tabs
@@ -101,15 +94,11 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     }
   })
 
-  .state('tab.cookprofile', {
-    url: '/cookprofile/:cookId',
-    views: {
-      'tab-cookprofile': {
-        templateUrl: 'templates/tab-cookprofile.html',
-        controller: 'CookProfileCtrl as Ctrl'
-      }
-    }
+  .state('cookProfile', {
+    url: '/cookprofile/:cookID',
+    templateUrl: 'templates/cookprofile.html',
+    controller: 'CookProfileCtrl as Ctrl'
   })
 
-
+  $urlRouterProvider.otherwise('/tab/listing');
 });

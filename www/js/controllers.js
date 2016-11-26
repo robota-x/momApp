@@ -12,26 +12,25 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('cookProfileController', function(cookService) {
-    var ctrl = this;
-    ctrl.dishes = angular.copy(cookService.dishes.firstCook);
-
-    ctrl.addPortion = function addPortion(dishID) {
-      ctrl.dishes[dishID].orderQuantity ? ctrl.dishes[dishID].orderQuantity +=1 : ctrl.dishes[dishID].orderQuantity = 1;
-    };
-
-    ctrl.removePortion = function removePortion(dishID) {
-      ctrl.dishes[dishID].orderQuantity > 0 ? ctrl.dishes[dishID].orderQuantity -= 1 : ctrl.dishes[dishID].orderQuantity = 0;
-    };
-  })
+  // .controller('cookProfileController', function(cookService) {
+  //   var ctrl = this;
+  //   ctrl.dishes = angular.copy(cookService.dishes.firstCook);
+  //
+  //   ctrl.addPortion = function addPortion(dishID) {
+  //     ctrl.dishes[dishID].orderQuantity ? ctrl.dishes[dishID].orderQuantity +=1 : ctrl.dishes[dishID].orderQuantity = 1;
+  //   };
+  //
+  //   ctrl.removePortion = function removePortion(dishID) {
+  //     ctrl.dishes[dishID].orderQuantity > 0 ? ctrl.dishes[dishID].orderQuantity -= 1 : ctrl.dishes[dishID].orderQuantity = 0;
+  //   };
+  // })
 
   .controller('ListingCtrl', function(cookService){
     this.data = angular.copy(cookService.data);
-
   })
 
-  .controller('CookProfileCtrl', function($stateParams) {
-    console.log('in stuff', $stateParams.cookId);
+  .controller('CookProfileCtrl', function() {
+    console.log('in stuff');
   })
 
   .controller('MoreCtrl', function(){})

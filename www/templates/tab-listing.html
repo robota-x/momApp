@@ -2,7 +2,8 @@
   <ion-content>
     <h1>Welcome, those are the cooks in your range today:</h1>
     <div ng-repeat="(id, cookdata) in Ctrl.data">
-      <a href="#/tab/cookprofile/{{id}}"><img class="cook-profile-listing" src="{{cookdata.profileImg}}" /></a>
+      <a href="#/cookprofile/{{id}}"><img class="cook-profile-listing" src="{{cookdata.profileImg}}" /></a>
+      <!-- <a href="#/tab/cookprofile/{{id}}"><img class="cook-profile-listing" src="{{cookdata.profileImg}}" /></a> -->
       <div><b>{{cookdata.name}} - {{cookdata.rating}}:</b> {{cookdata.speciality}}</div>
       <div>{{cookdata.pitch}}
     </div>
