@@ -5,6 +5,15 @@
     <div class="cook-name">Mom</div>
     <div class="cook-rating">4.6/5.0</div>
     <div class="cook-pitch">Here's what I'm cooking tonight<div>
-      <h3>{{ctrl.dishes}}</h3>
+    <div class="cook-dish-container">
+      <div class="cook-dish" ng-repeat="(id, dish) in ctrl.dishes">
+        <img src={{dish.imageSrc}} />
+        <h3>{{dish.name}}</h3>
+        <button>{{dish.price}} £ x {{dish.orderQuantity || ''}}</button>
+        <button ng-if=dish.orderQuantity>Remove Portion</button>
+        <button ng-if=dish.orderQuantity>Delivery and extra options</button>
+        <span ng-if=dish.orderQuantity>Total: {{dish.orderQuantity * dish.price}} £</span>
+      </div>
+    </div>
   </ion-content>
 </ion-view>
