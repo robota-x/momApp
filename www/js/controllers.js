@@ -34,10 +34,17 @@ angular.module('starter.controllers', [])
     Ctrl.data = angular.copy(cookService.data[$stateParams.cookID]);
 
     Ctrl.currentOrder = cookService.newOrder($stateParams.cookID);
-    console.log(Ctrl.currentOrder);
-    Ctrl.addPortion = function addPortion(dishID) {
 
+    Ctrl.addPortion = function addPortion(dishID) {
+      console.log('add', dishID)
+      Ctrl.currentOrder[dishID].quantity += 1;
     };
+
+    Ctrl.removePortion = function removePortion(dishID) {
+      console.log('rmv')
+
+      Ctrl.currentOrder[dishID].quantity = 0 ? null : Ctrl.currentOrder[dishID].quantity -= 1;
+    }
 
   })
 
