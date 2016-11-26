@@ -12,6 +12,6 @@ angular.module('starter.controllers', [])
     }
   })
 
-  .controller('cookProfileController', function() {
-
+  .controller('cookProfileController', function(cookService) {
+      this.dishes = cookService.dishes.firstCook;
   });

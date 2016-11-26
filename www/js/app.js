@@ -46,7 +46,7 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
   .state('cookProfile', {
     url: '/cook-profile',
     templateUrl: 'templates/cook-profile.html',
-    controller: 'cookProfileController'
+    controller: 'cookProfileController as ctrl'
   })
 
 
