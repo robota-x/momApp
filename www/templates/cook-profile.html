@@ -2,12 +2,12 @@
 <ion-view view-title="Map">
   <ion-content class="padding">
     <img src="https://marvelapp-live.storage.googleapis.com/canvas/2016/11/8bc1d9e5890842e9aff3569c6a67fe51.jpg">
-    <div class="cook-name">Mom</div>
+    <h1 class="cook-name">Mom</h1>
     <div class="cook-rating">4.6/5.0</div>
     <div class="cook-pitch">Here's what I'm cooking tonight<div>
     <div class="cook-dish-container">
       <div class="cook-dish" ng-repeat="(id, dish) in ctrl.dishes">
-        <img src={{dish.imageSrc}} />
+        <img class="cook-dish-image" src="{{dish.imageSrc}}" />
         <h3>{{dish.name}}</h3>
         <button>{{dish.price}} £ x {{dish.orderQuantity || ''}}</button>
         <button ng-if=dish.orderQuantity>Remove Portion</button>

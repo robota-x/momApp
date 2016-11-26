@@ -1,1 +1,28 @@
 /* Empty. Add your own CSS if you like */
+.cook-dish:nth-child(2n+1) {
+    margin-left: 30px;
+}
+
+.cook-dish:nth-child(2n+0) {
+    margin-left: 0px;
+}
+
+.cook-dish {
+  width: 40%;
+  height: 300px;
+	margin-bottom: 20px;
+	float: left;
+	overflow: hidden;
+}
+
+.cook-dish-image {
+  width: 40%;
+  height: auto;
+}
+
+.cook-dish-container {
+	position: relative;
+	margin-top: 20px;
+	width: 960px;
+	overflow: hidden;
+}
