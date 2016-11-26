@@ -1,5 +1,10 @@
 <ion-view view-title="">
   <ion-content>
-    <h1>HELLO</h1>
+    <h1>Welcome, those are the offering in your range today:</h1>
+    <div ng-repeat="(id, cookdata) in Ctrl.data">
+      <img class="cook-profile-listing" src="{{cookdata.profileImg}}" />
+      <div><b>{{cookdata.name}} - {{cookdata.rating}}:</b> {{cookdata.speciality}}</div>
+      <div>{{cookdata.pitch}}
+    </div>
   </ion-content>
 </ion-view>

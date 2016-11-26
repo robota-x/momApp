@@ -25,7 +25,11 @@ angular.module('starter.controllers', [])
     };
   })
 
-  .controller('ListingCtrl', function(){})
+  .controller('ListingCtrl', function(cookService){
+    this.data = angular.copy(cookService.data);
+
+  })
+
   .controller('MoreCtrl', function(){})
   .controller('OrdersCtrl', function(){})
   .controller('ChatCtrl', function(){})

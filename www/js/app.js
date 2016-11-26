@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     views: {
       'tab-listing': {
         templateUrl: 'templates/tab-listing.html',
-        controller: 'ListingCtrl'
+        controller: 'ListingCtrl as Ctrl'
       }
     }
   })
@@ -66,7 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     views: {
       'tab-more': {
         templateUrl: 'templates/tab-more.html',
-        controller: 'MoreCtrl'
+        controller: 'MoreCtrl as Ctrl'
       }
     }
   })
@@ -76,7 +76,7 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     views: {
       'tab-orders': {
         templateUrl: 'templates/tab-orders.html',
-        controller: 'OrdersCtrl'
+        controller: 'OrdersCtrl as Ctrl'
       }
     }
   })
@@ -86,7 +86,7 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     views: {
       'tab-chat': {
         templateUrl: 'templates/tab-chat.html',
-        controller: 'ChatCtrl'
+        controller: 'ChatCtrl as Ctrl'
       }
     }
   })
@@ -96,7 +96,7 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     views: {
       'tab-profile': {
         templateUrl: 'templates/tab-profile.html',
-        controller: 'ProfileCtrl'
+        controller: 'ProfileCtrl as Ctrl'
       }
     }
   })
