@@ -91,3 +91,7 @@ td, th {
   vertical-align: middle;
   border: 1px solid grey;
 }
+
+input {
+  border: 1px teal solid;
+}

@@ -1,5 +1,63 @@
 <ion-view view-title="">
+  <ion-nav-buttons side="secondary">
+    <button class="button" ng-if="true" ng-click="Ctrl.saveProfile()">
+      Save Changes
+    </button>
+  </ion-nav-buttons>
   <ion-content>
-    <h1>This is the User Profile</h1>
+    <h1>Welcome to your profile page</h1>
+    <h3>Select your default options for ordering food</h3>
+    <div>
+      <h5>Default delivery option</h5>
+      <div>
+        <label>
+          <input type="radio" value="delivery" ng-model="Ctrl.options.delivery">
+          Delivery to your doorstep (extra charge may apply)
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="radio" value="pickup" ng-model="Ctrl.options.delivery">
+          Pickup at the cook delivery spot
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="radio" value="pickupClose" ng-model="Ctrl.options.delivery">
+          Pickup if closer than 300mt
+        </label>
+      </div>
+
+      <div>
+        <h5>Default payment time</h5>
+        <div>
+          <label>
+            <input type="radio" value="orderTime" ng-model="Ctrl.options.payment">
+            When you order (5% discount)
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" value="beforeDelivery" ng-model="Ctrl.options.payment">
+            1h before delivery
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h5>Your home address (used for suggestions and delivery options)</h5>
+        <div class="list">
+           <label class="item item-input">
+           <input type="text" placeholder="Address" ng-model="Ctrl.options.address.address" />
+           </label>
+
+           <label class="item item-input">
+           <input type="text" placeholder="City" ng-model="Ctrl.options.address.city" />>
+           </label>
+
+           <label class="item item-input">
+           <input type="text" placeholder="Postcode" ng-model="Ctrl.options.address.postcode" />>
+           </label>
+        </div>
   </ion-content>
 </ion-view>
