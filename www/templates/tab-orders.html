@@ -1,17 +1,20 @@
 <ion-view view-title="">
   <ion-content>
     <h1>These are all the orders you have placed</h1>
-    <table>
-      <tr>
-        <th>
-          Heading
-        </th>
-      </tr>
-      <tr ng-repeat="order in Ctrl.orders">
-        <td>
-          {{order}}
-        </td>
-      </tr>
-    </table>
+    <div ng-repeat="order in Ctrl.orders track by $index">
+      <table class="order-table">
+        <tr>
+          <th colspan="4">
+            Order id {{$index}}
+          </th>
+        </tr>
+        <tr ng-repeat="dish in order track by $index" ng-if="dish.quantity">
+          <td><img src="{{dish.imageSrc}}" class="cook-profile-listing"/></td>
+          <td>{{dish.name}}</td>
+          <td>{{dish.date}}</td>
+          <td>{{dish.quantity}}</td>
+        </tr>
+      </table>
+    </div>
   </ion-content>
 </ion-view>
