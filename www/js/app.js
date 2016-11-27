@@ -31,12 +31,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  .state('tab.map', {
-    url: '/map',
-    templateUrl: 'templates/tab-map.html',
-    controller: 'mapController'
-  })
-
   //tabs
   .state('tab', {
     url: '/tab',
@@ -54,6 +48,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     }
   })
 
+  .state('tab.map', {
+    url: '/map',
+    views: {
+      'tab-map': {
+        templateUrl: 'templates/tab-map.html',
+        controller: 'MapCtrl as Ctrl'
+      }
+    }
+  })
   .state('tab.more', {
     url: '/more',
     views: {
