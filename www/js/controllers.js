@@ -2,7 +2,7 @@
 
 angular.module('starter.controllers', [])
 
-  .controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
+  .controller('MapCtrl', function($scope, $state, $cordovaGeolocation, cookService) {
     var options = {timeout: 10000, enableHighAccuracy: true};
 
     $cordovaGeolocation.getCurrentPosition(options)
@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
 
         var mapOptions = {
           center: myLatLng,
-          zoom: 15,
+          zoom: 17,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
