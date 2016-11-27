@@ -2,6 +2,25 @@
 
 angular.module('starter.controllers')
 
+  .service('userSettings', function() {
+    var options = this;
+    options.defaultSettings = {
+      delivery: 'pickup',
+      payment: 'beforeDelivery',
+      address: {}
+    }
+    var storedSettings = sessionStorage.getItem('userSettings');
+    options.loadSettings = function() {
+      options.settings =  storedSettings ? JSON.parse(storedSettings) : angular.copy(options.defaultSettings);
+    }
+
+    options.saveSetting = function(newSettings) {
+      options.settings = newSettings;
+      sessionStorage.setItem('userSettings', JSON.stringify(options.settings));
+      console.log('saved settings');
+    }
+  })
+
   .service('orderService', function() {
     this.confirmedOrders = sessionStorage.getItem('orders') ? JSON.parse(sessionStorage.getItem('orders')) : [];  // ask our server. in a distant future.
     // console.log('ini order', sessionStorage.getItem('orders'))
