@@ -100,5 +100,5 @@ angular.module('starter', ['ionic', 'starter.controllers' ])
     controller: 'CookProfileCtrl as Ctrl'
   })
 
-  $urlRouterProvider.otherwise('/tab/listing');
+  // $urlRouterProvider.otherwise('/tab/listing');
 });

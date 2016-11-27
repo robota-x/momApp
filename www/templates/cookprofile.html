@@ -3,6 +3,9 @@
   <ion-nav-buttons side="secondary">
     <span ng-if="Ctrl.orderCompleted"><b>Your Order has been successfully placed!</b></span>
     <span ng-if="Ctrl.isOrderNonNull()">Total: {{Ctrl.orderTotal()}}</span>
+    <button class="button" ng-if="Ctrl.orderCompleted" ng-click="Ctrl.goToOrders()">
+      Go to your orders
+    </button>
     <button class="button" ng-if="Ctrl.isOrderNonNull()" ng-click="Ctrl.confirmOrder()">
       Confirm your order!
     </button>

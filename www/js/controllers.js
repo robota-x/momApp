@@ -12,24 +12,11 @@ angular.module('starter.controllers', [])
     }
   })
 
-  // .controller('cookProfileController', function(cookService) {
-  //   var ctrl = this;
-  //   ctrl.dishes = angular.copy(cookService.dishes.firstCook);
-  //
-  //   ctrl.addPortion = function addPortion(dishID) {
-  //     ctrl.dishes[dishID].orderQuantity ? ctrl.dishes[dishID].orderQuantity +=1 : ctrl.dishes[dishID].orderQuantity = 1;
-  //   };
-  //
-  //   ctrl.removePortion = function removePortion(dishID) {
-  //     ctrl.dishes[dishID].orderQuantity > 0 ? ctrl.dishes[dishID].orderQuantity -= 1 : ctrl.dishes[dishID].orderQuantity = 0;
-  //   };
-  // })
-
   .controller('ListingCtrl', function(cookService){
     this.data = angular.copy(cookService.data);
   })
 
-  .controller('CookProfileCtrl', function($stateParams, cookService, orderService) {
+  .controller('CookProfileCtrl', function($stateParams, cookService, orderService, $location) {
     var Ctrl = this;
     Ctrl.data = angular.copy(cookService.data[$stateParams.cookID]);
 
@@ -61,10 +48,15 @@ angular.module('starter.controllers', [])
     };
 
     Ctrl.confirmOrder = function() {
+      Ctrl.currentOrder.totalCost = Ctrl.orderTotal();
       orderService.confirmedOrders.push(Ctrl.currentOrder);
       Ctrl.currentOrder = cookService.newOrder($stateParams.cookID);
       Ctrl.orderCompleted = true;
       sessionStorage.setItem('orders', JSON.stringify(orderService.confirmedOrders));
+    };
+
+    Ctrl.goToOrders = function() {
+      $location.path('tab/orders');
     };
 
   })
