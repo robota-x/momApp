@@ -1,5 +1,14 @@
 <ion-view view-title="">
   <ion-content>
-    <h1>This is the Orders Page</h1>
+    <h1>These are all the orders you have placed</h1>
+    <table>
+      <tr>
+        <th>
+          Heading
+        </th>
+      </tr>
+      <tr ng-repeat="order in Ctrl.orders">
+      </tr>
+    </table>
   </ion-content>
 </ion-view>

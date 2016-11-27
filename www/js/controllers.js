@@ -64,11 +64,16 @@ angular.module('starter.controllers', [])
       orderService.confirmedOrders.push(Ctrl.currentOrder);
       Ctrl.currentOrder = cookService.newOrder($stateParams.cookID);
       Ctrl.orderCompleted = true;
+      sessionStorage.setItem('orders', orderService.confirmedOrders);
     };
 
   })
 
+  .controller('OrdersCtrl', function(orderService){
+    var Ctrl = this;
+    Ctrl.order = orderService.confirmedOrders;
+  })
+
   .controller('MoreCtrl', function(){})
-  .controller('OrdersCtrl', function(){})
   .controller('ChatCtrl', function(){})
   .controller('ProfileCtrl', function(){});

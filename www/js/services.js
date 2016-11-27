@@ -3,8 +3,9 @@
 angular.module('starter.controllers')
 
   .service('orderService', function() {
-    this.confirmedOrders = [];  // ask our server. in a distant future.
-    
+    this.confirmedOrders = sessionStorage.getItem('orders') || [];  // ask our server. in a distant future.
+    // console.log('ini order', sessionStorage.getItem('orders'))
+
   })
 
   .service('cookService', function() {
