@@ -67,6 +67,14 @@ angular.module('starter.controllers', [])
     console.log('in order', orderService);
   })
 
+  .controller('ProfileCtrl', function(userSettings){
+    var Ctrl = this;
+    Ctrl.options = angular.copy(userSettings.settings);
+
+    Ctrl.saveProfile = function() {
+      userSettings.saveSetting(Ctrl.options);
+    }
+  })
+
   .controller('MoreCtrl', function(){})
-  .controller('ChatCtrl', function(){})
-  .controller('ProfileCtrl', function(){});
+  .controller('ChatCtrl', function(){});

@@ -15,10 +15,12 @@ angular.module('starter.controllers')
     }
 
     options.saveSetting = function(newSettings) {
-      options.settings = newSettings;
+      options.settings = angular.copy(newSettings);
       sessionStorage.setItem('userSettings', JSON.stringify(options.settings));
       console.log('saved settings');
     }
+
+    options.loadSettings();
   })
 
   .service('orderService', function() {
