@@ -74,6 +74,10 @@ angular.module('starter.controllers', [])
     Ctrl.saveProfile = function() {
       userSettings.saveSetting(Ctrl.options);
     }
+
+    Ctrl.profileChanges = function() {
+      return !angular.equals(Ctrl.options, userSettings.settings);
+    }
   })
 
   .controller('MoreCtrl', function(){})
