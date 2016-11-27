@@ -19,6 +19,7 @@ angular.module('starter.controllers', [])
         $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
         google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+          //place own marker
           var marker = new google.maps.Marker({
               map: $scope.map,
               clickable: false,
@@ -29,6 +30,22 @@ angular.module('starter.controllers', [])
               animation: google.maps.Animation.DROP,
               position: myLatLng
           });
+
+          //place cook marker
+          console.log('cook', cookService);
+          var geocoder = new google.maps.Geocoder();
+          var cooks = cookService.data;
+          for (var cookID in cooks) {
+            console.log('coding', cooks[cookID].address);
+            geocoder.geocode({address: cooks[cookID].address}, function(res, status) {
+              console.log('decoded', res, res[0].geometry.location);
+              var marker = new google.maps.Marker({
+                map: $scope.map,
+                animation: google.maps.Animation.DROP,
+                position: res[0].geometry.location
+              });
+            });
+          }
         });
       }, function(error){
         console.log("Could not get location");
