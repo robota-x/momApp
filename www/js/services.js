@@ -2,6 +2,11 @@
 
 angular.module('starter.controllers')
 
+  .service('orderService', function() {
+    this.confirmedOrders = [];  // ask our server. in a distant future.
+    
+  })
+
   .service('cookService', function() {
 
     this.newOrder = function(cookID) {

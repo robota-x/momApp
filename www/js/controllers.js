@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
     this.data = angular.copy(cookService.data);
   })
 
-  .controller('CookProfileCtrl', function($stateParams, cookService) {
+  .controller('CookProfileCtrl', function($stateParams, cookService, orderService) {
     var Ctrl = this;
     Ctrl.data = angular.copy(cookService.data[$stateParams.cookID]);
 
@@ -58,7 +58,13 @@ angular.module('starter.controllers', [])
       return Object.keys(Ctrl.currentOrder).reduce(function(acc, key) {
         return Ctrl.currentOrder[key].quantity * Ctrl.currentOrder[key].price + acc;
       }, 0);
-    }
+    };
+
+    Ctrl.confirmOrder = function() {
+      orderService.confirmedOrders.push(Ctrl.currentOrder);
+      Ctrl.currentOrder = cookService.newOrder($stateParams.cookID);
+      Ctrl.orderCompleted = true;
+    };
 
   })
 
