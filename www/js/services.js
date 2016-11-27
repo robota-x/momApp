@@ -3,7 +3,7 @@
 angular.module('starter.controllers')
 
   .service('orderService', function() {
-    this.confirmedOrders = sessionStorage.getItem('orders') || [];  // ask our server. in a distant future.
+    this.confirmedOrders = sessionStorage.getItem('orders') ? JSON.parse(sessionStorage.getItem('orders')) : [];  // ask our server. in a distant future.
     // console.log('ini order', sessionStorage.getItem('orders'))
 
   })

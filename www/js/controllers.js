@@ -64,14 +64,15 @@ angular.module('starter.controllers', [])
       orderService.confirmedOrders.push(Ctrl.currentOrder);
       Ctrl.currentOrder = cookService.newOrder($stateParams.cookID);
       Ctrl.orderCompleted = true;
-      sessionStorage.setItem('orders', orderService.confirmedOrders);
+      sessionStorage.setItem('orders', JSON.stringify(orderService.confirmedOrders));
     };
 
   })
 
   .controller('OrdersCtrl', function(orderService){
     var Ctrl = this;
-    Ctrl.order = orderService.confirmedOrders;
+    Ctrl.orders = orderService.confirmedOrders;
+    console.log('in order', orderService);
   })
 
   .controller('MoreCtrl', function(){})
