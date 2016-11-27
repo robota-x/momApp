@@ -7,12 +7,36 @@
           <th colspan="4">
             Order id {{$index}}
           </th>
+          <th>
+            Total: {{order.totalCost}} £
+          </th>
         </tr>
+        <tr>
+          <th colspan="2">
+            Dish Ordered
+          </th>
+          <th>
+            Date
+          </th>
+          <th>
+            Portions
+          </th>
+          <th>
+            Cost
+          </th>
+        </tr>
+
         <tr ng-repeat="dish in order track by $index" ng-if="dish.quantity">
           <td><img src="{{dish.imageSrc}}" class="cook-profile-listing"/></td>
           <td>{{dish.name}}</td>
-          <td>{{dish.date}}</td>
+          <td>
+            <div>{{dish.date}}</div>
+            <button>
+              Change time/delivery options
+            </button>
+          </td>
           <td>{{dish.quantity}}</td>
+          <td>{{dish.price * dish.quantity}} £</td>
         </tr>
       </table>
     </div>
